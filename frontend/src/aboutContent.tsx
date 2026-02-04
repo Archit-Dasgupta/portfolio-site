@@ -4,15 +4,15 @@ import jpImage from '../public/images/jp.jpg';
 /* eslint-disable no-multiple-empty-lines */
 /* eslint-disable max-len */
 export const aboutContent = {
-  intro: ["I'm Bryant! (he/him)", 'I build web experiences'],
+  intro: ["I'm Archit Dasgupta!", 'This is my portfolio'],
   mission: [
-    'I am a freelance dev who helps awesome designers (like you) build their wildest dreams.',
+    'I am a product manager, that helps organization (you) build experiences that matter',
     'Together, let\'s create something that stands out––and has your users saying, "woah."',
   ],
   testimonials: [
     {
       quote:
-        "Bryant's kickass work is complemented by his infectious energy and passion for creating original, exciting work. He is a true creative partner––always bringing new ideas to the table.",
+        "Archit's kickass work is complemented by his infectious energy and passion for creating original, exciting work. He is a true creative partner––always bringing new ideas to the table.",
       shortName: 'Stef',
       name: 'Stephanie Jung',
       headshot: stefImage,
@@ -20,7 +20,7 @@ export const aboutContent = {
     },
     {
       quote:
-        "Bryant's collaborative mindset and aptitude to explore ideas well beyond the minimum viable product make him an invaluable partner.",
+        "Archit's collaborative mindset and aptitude to explore ideas well beyond the minimum viable product make him an invaluable partner.",
       name: 'JP Ramirez',
       shortName: 'JP',
       title: [
