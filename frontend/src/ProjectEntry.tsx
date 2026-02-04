@@ -25,7 +25,7 @@ import { useSceneController } from './SceneController';
 const ROTATION_MAX_SPEED = 0.01;
 const MAX_WANDER_DISTANCE = 0.5;
 
-const getRandomCubeOffset = ():CoordArray => [
+const getRandomCubeOffset = (): CoordArray => [
   (Math.random() * 2 - 1) * MAX_WANDER_DISTANCE,
   (Math.random() * 2 - 1) * MAX_WANDER_DISTANCE,
   (Math.random() * 2 - 1) * MAX_WANDER_DISTANCE,
@@ -52,7 +52,7 @@ export const ProjectEntry = ({
   hovering,
   someProjectIsOpen,
   setHovering,
-}:{
+}: {
   project: Project;
   basePosition: CoordArray;
   open: boolean;
@@ -126,7 +126,7 @@ export const ProjectEntry = ({
   }
   if (open) cubeScale = 1;
 
-  const cubePosition:CoordArray = open
+  const cubePosition: CoordArray = open
     ? [0, 0, 4]
     : basePosition;
   const { animatedCubePosition } = useSpring({
@@ -159,27 +159,27 @@ export const ProjectEntry = ({
         position={basePosition}
       >
         {scene === 'projects' && !someProjectIsOpen && (
-        <ThreeButton
-          position={[0, 0, 0]}
-          width={2}
-          height={2}
-          description=""
-          activationMsg=""
-          cursor="open-project"
-          // debug
-          onClick={() => {
-            setOpen(true);
-            event('project-opened', {
-              project: project?.slug?.current ?? 'unset',
-            });
-          }}
-          onFocus={() => {
-            setHovering(true);
-          }}
-          onBlur={() => {
-            setHovering(false);
-          }}
-        />
+          <ThreeButton
+            position={[0, 0, 0]}
+            width={2}
+            height={2}
+            description=""
+            activationMsg=""
+            cursor="open-project"
+            // debug
+            onClick={() => {
+              setOpen(true);
+              event('project-opened', {
+                project: project?.slug?.current ?? 'unset',
+              });
+            }}
+            onFocus={() => {
+              setHovering(true);
+            }}
+            onBlur={() => {
+              setHovering(false);
+            }}
+          />
         )}
 
         <animated.group
@@ -189,7 +189,7 @@ export const ProjectEntry = ({
             position={[0, 0, -0.2]}
             scale={[1, 1, 0.1]}
           >
-            <sphereBufferGeometry
+            <sphereGeometry
               args={[1, 20, 20]}
               attach="geometry"
             />

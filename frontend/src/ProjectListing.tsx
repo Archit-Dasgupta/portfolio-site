@@ -18,11 +18,11 @@ import { fontUrls } from './typography';
 import { BackgroundColorMaterial } from './ProjectBackgroundMaterial';
 
 export function ProjectListing({ active, projects, ...groupProps }:
-  { active:boolean, projects: Project[] | null; } & GroupProps) {
+  { active: boolean, projects: Project[] | null; } & GroupProps) {
   const [blobIsBig, setBlobIsBig] = useState(false);
 
-  const [hoveredIndex, setHoveredIndex] = useState<null|number>(null);
-  const [openIndex, setOpenIndex] = useState<null|number>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
+  const [openIndex, setOpenIndex] = useState<null | number>(null);
 
   const breakpoints = useBreakpoints();
 
@@ -86,7 +86,7 @@ export function ProjectListing({ active, projects, ...groupProps }:
           position={[0, 0, -5]}
           scale={[2.5, 2.5, 0.1]}
         >
-          <sphereBufferGeometry
+          <sphereGeometry
             args={[4, 70, 70]}
             attach="geometry"
           />
@@ -95,7 +95,7 @@ export function ProjectListing({ active, projects, ...groupProps }:
             speed={6}
             radius={1}
             distort={0.3}
-          // depthTest={false}
+            // depthTest={false}
             transparent
             opacity={0.7}
             side={DoubleSide}
@@ -141,12 +141,12 @@ export function ProjectListing({ active, projects, ...groupProps }:
             ]}
             someProjectIsOpen={openIndex !== null}
             hovering={openIndex === null && hoveredIndex === index}
-            setHovering={(isHovering:boolean) => {
+            setHovering={(isHovering: boolean) => {
               if (isHovering) setHoveredIndex(index);
               else if (!isHovering && hoveredIndex === index) setHoveredIndex(null);
             }}
             open={openIndex === index}
-            setOpen={(isOpening:boolean) => {
+            setOpen={(isOpening: boolean) => {
               if (isOpening && !aProjectIsOpen) {
                 setOpenIndex(index);
                 setScene('project-open');
