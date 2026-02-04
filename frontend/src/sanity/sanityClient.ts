@@ -5,8 +5,8 @@ import createClient from '@sanity/client';
 import { Documents } from '../../generatedSanitySchemaTypes';
 
 const clientConfig = {
-  projectId: process.env.SANITY_PROJECT_ID ?? '',
-  dataset: process.env.SANITY_DATASET ?? '',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? '',
   previewMode: false,
   useCdn: false,
   apiVersion: '2022-07-31',
@@ -14,7 +14,7 @@ const clientConfig = {
 
 const authorizedClientConfig = {
   ...clientConfig,
-  token: process.env.SANITY_TOKEN ?? '',
+  token: process.env.NEXT_PUBLIC_SANITY_TOKEN ?? '',
 };
 
 export const authorizedSanityClient = createClient(authorizedClientConfig);

@@ -4,8 +4,8 @@
     "name": "bryantcodesart"
   },
   "api": {
-    "projectId": "0ttnaq4a",
-    "dataset": "dev"
+    "projectId": "qtj88st8",
+    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
