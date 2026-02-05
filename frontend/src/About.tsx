@@ -26,10 +26,10 @@ import haileyImage from '../public/images/hailey2.jpg';
 
 export const Slides = ({
   slide, setScene, setSlide,
-}:{
-  slide:SlideName,
-  setScene:(_scene:SceneName)=>void,
-  setSlide:(_slide:SlideName)=>void
+}: {
+  slide: SlideName,
+  setScene: (_scene: SceneName) => void,
+  setSlide: (_slide: SlideName) => void
 }) => {
   const breakpoints = useBreakpoints();
   const breakpoint = breakpoints.about;
@@ -59,7 +59,7 @@ export const Slides = ({
             className="text-[max(1.5em,16px)]"
             tabIndex={scene === 'menu' ? 0 : -1}
           >
-            ABOUT_BRYANT
+            ABOUT_ARCHIT
           </TerminalButton>
         </div>
       </div>
@@ -78,7 +78,7 @@ export const Slides = ({
         `}
         >
           <TextWindow
-            title="BRYANT_SMITH.exe"
+            title="ARCHIT_DASGUPTA.exe"
             className={`
             relative self-baseline
             ${breakpoints.about ? '' : `
@@ -118,24 +118,24 @@ export const Slides = ({
             ${slide === 'mission' ? '' : 'translate-x-[20%] translate-y-[70%]'}
           `}
             srcs={[selfPortraitImage]}
-            alts={['Crayon illustration of Bryant from decades ago.']}
+            alts={['Crayon illustration of Archit from decades ago.']}
           />
         </div>
       )}
       {(slide === 'testimonials' || slide === 'skills') && (
-      <div
-        className={`
+        <div
+          className={`
           absolute top-0 left-0 w-full h-full
           pointer-events-none
           ${breakpoints.about ? 'grid grid-cols-[1fr_80%]' : 'grid grid-cols-1'}
         `}
-      >
-        <ImageWindow
-          delay={100}
-          title="HAILEY.jpg"
-          topColor="violet"
-          positions={['60% 15%']}
-          className={`
+        >
+          <ImageWindow
+            delay={100}
+            title="HAILEY.jpg"
+            topColor="violet"
+            positions={['60% 15%']}
+            className={`
             ${breakpoints.about ? `
               self-start h-[13em] mr-[-2em] w-[10em] mt-[6em]
             ` : `
@@ -149,38 +149,38 @@ export const Slides = ({
             transition-transform duration-[1s]
             ${slide === 'testimonials' ? '' : 'translate-x-[-70%] translate-y-[-10%]'}
           `}
-          srcs={[haileyImage]}
-          alts={['My dog Hailey smiling her crazy smile.']}
-        />
+            srcs={[haileyImage]}
+            alts={['My dog Hailey smiling her crazy smile.']}
+          />
 
-        <TestimonialsWindow
-          className={`
+          <TestimonialsWindow
+            className={`
             relative
             transition-transform duration-[1s]
             ${slide === 'testimonials' ? '' : 'translate-x-[43%] translate-y-[-80%]'}
             ${breakpoint ? 'self-baseline' : 'col-[1/-1] row-[1/-1] self-end'}
           `}
-          delay={1000}
-          title="KIND_WORDS_FROM_OTHERS.exe"
-          color={colors.lime}
-          topColor={colors.cyan}
-        >
-          <div className={`grid place-items-center mt-[2em] ${breakpoint ? 'col-span-2' : ''}`}>
-            <TerminalWindowButton
-              onClick={() => {
-                setSlide('skills');
-              }}
-              delay={1000}
-              color="black"
-              bgColor="violet"
-              disabled={slide !== 'testimonials'}
-            >
-              skills, tho?
-            </TerminalWindowButton>
-          </div>
+            delay={1000}
+            title="KIND_WORDS_FROM_OTHERS.exe"
+            color={colors.lime}
+            topColor={colors.cyan}
+          >
+            <div className={`grid place-items-center mt-[2em] ${breakpoint ? 'col-span-2' : ''}`}>
+              <TerminalWindowButton
+                onClick={() => {
+                  setSlide('skills');
+                }}
+                delay={1000}
+                color="black"
+                bgColor="violet"
+                disabled={slide !== 'testimonials'}
+              >
+                skills, tho?
+              </TerminalWindowButton>
+            </div>
 
-        </TestimonialsWindow>
-        {/* <TextWindow
+          </TestimonialsWindow>
+          {/* <TextWindow
           title={null}
           className={`
             relative self-baseline
@@ -207,7 +207,7 @@ export const Slides = ({
             setSlide('skills');
           }}
         /> */}
-      </div>
+        </div>
       )}
       {(slide === 'skills') && (
         <div
@@ -225,7 +225,7 @@ export const Slides = ({
             topColor="white"
             setScene={setScene}
             setSlide={setSlide}
-            // draggable={false}
+          // draggable={false}
           />
         </div>
       )}
@@ -251,7 +251,7 @@ export function ComputerTerminal() {
   // Instead, we do trigonometry to get the exact pixel size
 
   // Position and size of plane that our div should cover as closely as possible
-  const position:CoordArray = [-1, 0.7, 2];
+  const position: CoordArray = [-1, 0.7, 2];
   const planeSizeInWorldUnits = [3.4, 2];
 
   // Canvas is full window
@@ -325,25 +325,25 @@ export function ComputerTerminal() {
             <Slides slide={slide} setSlide={setSlide} setScene={setScene} />
 
             {slide !== 'intro' && (
-            <div
-              className={`absolute
+              <div
+                className={`absolute
                 text-[max(0.7em,16px)]
                 right-0
                 top-0
                 z-[-1]
               `}
-            >
-              <TerminalButton
-                onClick={() => {
-                  setScene('menu');
-                  setSlide('intro');
-                }}
-                delay={500}
-                className="font-mono"
               >
-                {breakpoints.about ? 'BACK_TO_MENU' : 'BACK'}
-              </TerminalButton>
-            </div>
+                <TerminalButton
+                  onClick={() => {
+                    setScene('menu');
+                    setSlide('intro');
+                  }}
+                  delay={500}
+                  className="font-mono"
+                >
+                  {breakpoints.about ? 'BACK_TO_MENU' : 'BACK'}
+                </TerminalButton>
+              </div>
             )}
           </div>
         </CustomCursorHover>

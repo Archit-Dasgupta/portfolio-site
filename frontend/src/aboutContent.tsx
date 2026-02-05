@@ -31,7 +31,7 @@ export const aboutContent = {
     },
     {
       quote:
-        "Bryant's building enables award-winning projects––including FWA Site Of The Day, Webby, 2x Awwwards Honorable Mention, CSSDA Special Kudos, CSSDA Best UI/UX/Innovation, 4x STA100, Type Director's Club, Webby For Good... & more.",
+        "Archit's building enables award-winning projects––including FWA Site Of The Day, Webby, 2x Awwwards Honorable Mention, CSSDA Special Kudos, CSSDA Best UI/UX/Innovation, 4x STA100, Type Director's Club, Webby For Good... & more.",
       name: 'The award people',
       shortName: 'Awards',
       headshot: '/images/star-icon.svg',

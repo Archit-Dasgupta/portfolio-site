@@ -45,7 +45,7 @@ const TEXT_LINES = [
   '<TurboEncabulator><Amulite prefabulated /><HydrocopticMarzelvanes count={6} /><Panendermic /><Panendermic semiboloid /></TurboEncabulator>',
   'rm -rf node_modules && npm install && npm run build && npm run hope && npm start',
   '// I hope github copilot will finish this part...',
-  '<AllWorkAndNoPlayMakesBryantADullBoy /><AllWorkAndNoPlayMakesBryantADullBoy /><AllWorkAndNoPlayMakesBryantADullBoy /><AllWorkAndNoPlayMakesBryantADullBoy />',
+  '<AllWorkAndNoPlayMakesArchitADullBoy /><AllWorkAndNoPlayMakesArchitADullBoy /><AllWorkAndNoPlayMakesArchitADullBoy /><AllWorkAndNoPlayMakesArchitADullBoy />',
   'useOnMyDeath(()=>{ eraseBrowserHistoryOnAllDevices(); doItAgainJustToBeSure(); tripleCheck(); youKnowWhatMaybeJustIncinerateTheHardDrives(); }); ',
   'const debugInterval = setInterval(()=>{if(prompt(\'Program still working?\')==="nope") throw new Error("bug.");}, 100);',
   '<Burrito spicy={100}>{toppings.map((tProps:{name:string,spicy:number,isHotsauce:boolean,vegan:boolean})=>(<Topping {...(tprops)} key={name} />)}</Burrito>',
@@ -144,13 +144,13 @@ function CodeRing({
   repeats,
   visible,
 }:
-{
-  canvases: (HTMLCanvasElement | null)[],
-  y: number,
-  r: number,
-  repeats: number,
-  visible:boolean
-}) {
+  {
+    canvases: (HTMLCanvasElement | null)[],
+    y: number,
+    r: number,
+    repeats: number,
+    visible: boolean
+  }) {
   const canvas = useMemo(() => canvases[Math.floor(Math.random() * canvases.length)], [canvases]);
 
   const speed = useMemo(() => Math.random() * 0.5 + 0.5, []);
@@ -172,7 +172,7 @@ function CodeRing({
     // Rotate the texture slightly--must be done by the texture and not rotating the mesh itself
     // because of the irregular elliptical shape (the axis of the ellipses would turn!)
     texture.current.offset.x = startingOffset * CANVAS_WIDTH
-     + (clock.getElapsedTime() / 60) * -speed;
+      + (clock.getElapsedTime() / 60) * -speed;
 
     if (visible && materialRef.current.opacity < 1) {
       materialRef.current.opacity += 0.1;
@@ -206,18 +206,18 @@ function CodeRing({
         >
           <canvasTexture
             attach="map"
-          // @ts-ignore
+            // @ts-ignore
             repeat={[repeats, 1]}
             image={canvas}
             premultiplyAlpha
-          // @ts-ignore
+            // @ts-ignore
             wrapS={THREE.RepeatWrapping}
             wrapT={THREE.RepeatWrapping}
             flipY={false}
-          // @ts-ignore
+            // @ts-ignore
             ref={texture}
-          // eslint-disable-next-line no-param-reassign
-          // onUpdate={(s) => { s.needsUpdate = true; }}
+            // eslint-disable-next-line no-param-reassign
+            // onUpdate={(s) => { s.needsUpdate = true; }}
             minFilter={LinearFilter}
             magFilter={NearestFilter}
           />

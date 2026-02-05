@@ -1,4 +1,4 @@
-const subject = 'Hello, Bryant!';
+const subject = 'Hello, Archit!';
 const body = 'I hope this note finds you well. You had such a compelling CTA, I just *had* to click on it!';
 
 export const contactHref = `mailto:architdg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
