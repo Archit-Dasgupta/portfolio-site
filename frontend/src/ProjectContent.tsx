@@ -17,8 +17,8 @@ import ExternalLinkIconSvg from './svg/ExternalLinkIconSvg';
 import { contactHref } from './contactHref';
 
 const ExternalLink = ({
-  href, cursor = 'external', children, onClick = () => {},
-}: { href: string; children: ReactNode; cursor?: CustomCursorState; onClick?: ()=>void}) => (
+  href, cursor = 'external', children, onClick = () => { },
+}: { href: string; children: ReactNode; cursor?: CustomCursorState; onClick?: () => void }) => (
   <CustomCursorHover cursor={cursor}>
     <a
       href={href}
@@ -46,7 +46,7 @@ const H2 = ({ children }: { children: ReactNode; }) => (
   </h2>
 );
 
-const LinkMark:PortableTextMarkComponent = ({ value, children }) => {
+const LinkMark: PortableTextMarkComponent = ({ value, children }) => {
   const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
   return (
     <a
@@ -60,12 +60,12 @@ const LinkMark:PortableTextMarkComponent = ({ value, children }) => {
   );
 };
 
-const ImageBlock:PortableTextTypeComponent = ({ value }:{value:ImageFigure}) => (
+const ImageBlock: PortableTextTypeComponent = ({ value }: { value: ImageFigure }) => (
   <figure className="border-[1px] border-[currentColor]">
     <img
       src={
-      getSanityImageUrlFor(value?.image?.asset as SanityImageSource)
-        .width(1000).url()
+        getSanityImageUrlFor(value?.image?.asset as SanityImageSource)
+          .width(1000).url()
       }
       alt={value?.alt}
     />
@@ -169,7 +169,7 @@ export const ProjectHeader = ({ project }: { project: Project; }) => (
           </dl>
         )}
       </div>
-      ) : null}
+    ) : null}
     {project.links?.length && (
       <ul className="col-span-2 mt-8">
         {project.links.map((link) => (
@@ -207,7 +207,7 @@ export const ProjectBody = ({ project }: { project: Project; }) => useMemo(() =>
   </div>
 ), [project?.body]);
 
-export const ProjectCTA = ({ slug }:{slug:string}) => (
+export const ProjectCTA = ({ slug }: { slug: string }) => (
   <div className="mb-[5em]">
     <H2>Questions?</H2>
     <P className="mb-8">
@@ -228,7 +228,7 @@ export const ProjectCTA = ({ slug }:{slug:string}) => (
         });
       }}
     >
-      hello @ bryantcodes.art
+      architdg@gmail.com
 
     </ExternalLink>
   </div>

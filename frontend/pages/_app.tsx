@@ -12,7 +12,7 @@ import { useConsoleLogDevSignature } from '../src/useConsoleLogDevSignature';
 import { PlayAllVideosOnClickInLowPowerMode } from '../src/usePlayAllVideosOnClickInLowPowerMode';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const siteData:SiteData = {
+  const siteData: SiteData = {
     startingScene: pageProps.scene ?? 'error',
     projects: pageProps.projects ?? null,
   };
@@ -23,16 +23,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   console.log('focused on', e.target);
   // });
 
-  const title = 'Bryant Smith, Creative Dev';
+  const title = 'Archit Dasgupta, Creative Dev';
   const description = 'I help awesome designers (like you) build their wildest dreams.';
-  const url = 'https://bryantcodes.art';
+  const url = 'https://architdasgupta.com';
 
   return (
     <>
       <DefaultSeo
         title={title}
         description={description}
-        canonical="https://bryantcodes.art"
+        canonical="https://architdasgupta.com"
         openGraph={{
           url,
           title,
@@ -47,10 +47,10 @@ function MyApp({ Component, pageProps }: AppProps) {
               type: 'image/png',
             },
           ],
-          site_name: 'bryantcodes.art',
+          site_name: 'architdasgupta.com',
         }}
         twitter={{
-          handle: '@bryantcodesart',
+          handle: '@architdasgupta',
           cardType: 'summary_large_image',
         }}
       />

@@ -178,11 +178,11 @@ export const CTA = () => {
             <MailIconSvg className="w-[2em] h-[1.625em]" />
             {ctas[ctaIndex] ?? (
               <span>
-                hello
+                architdg
                 <span className="text-[0.7em]">&nbsp;</span>
                 <span>@</span>
                 <span className="text-[0.7em]">&nbsp;</span>
-                bryantcodes.art
+                gmail.com
               </span>
             )}
           </span>
